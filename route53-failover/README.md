@@ -42,7 +42,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 ### 🔷 Notificação de Failover
 📩 Notificação recebida via **SNS** após desligar a EC2 primária:
 ![site](./evidencias/print4-sns.png)
-
+![site](./evidencias/print5-sns.png)
 ---
 ## 🔁 Passo a passo (via Console)
 
