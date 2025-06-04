@@ -1,6 +1,6 @@
 # 🧪 LAB AWS - Failover com Route 53 (via Console)
 
-Este laboratório demonstra como configurar failover entre duas instâncias EC2 usando **Amazon Route 53**, com **Health Check**, feito 100% via Console da AWS.
+Este laboratório demonstra como configurar failover entre duas instâncias EC2 usando **Amazon Route 53**, com **Health Check**.
 
 ---
 
