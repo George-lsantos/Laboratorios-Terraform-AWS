@@ -1,6 +1,6 @@
 # Soluções AWS: Um Portfólio de Projetos em Nuvem 
 
-Laboratório prático Cloud
+Bem-vindo ao meu Portfólio de Projetos na AWS! Este repositório reúne uma variedade de projetos práticos que exploram diferentes serviços e soluções da AWS, indo desde conceitos introdutórios até arquiteturas mais avançadas
 # 🌩️ Laboratórios Práticos AWS
 
 Repositório com laboratórios práticos de Cloud AWS feitos via Console.
