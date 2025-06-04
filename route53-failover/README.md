@@ -8,7 +8,7 @@ Este laboratório demonstra como configurar failover entre duas instâncias EC2 
 
 Garantir alta disponibilidade simulando falha de instância com:
 
-- Instâncias EC2 em AZs diferentes
+- Instâncias EC2 em AZs diferentes: Criei uma instância EC2, configurei o Apache, PHP e o código-fonte. Após a configuração, gerei uma imagem AMI personalizada. A partir dessa imagem, criei uma segunda instância EC2 idêntica para fins de redundância.
 - Verificação de integridade com Route 53
 - Política de failover DNS
 - Notificações via SNS
