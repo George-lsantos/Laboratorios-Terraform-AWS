@@ -34,9 +34,10 @@ Garantir alta disponibilidade simulando falha de instância com:
 ![EC2](./evidencias/print1-dashboard.png)
 ![EC2](./evidencias/print2-dashboard.png)
 
-### Configuração do Route 53
+### Configuração do Route 53: Hosted zones
 ![DNS](./evidencias/print2-route53.png)
-
+### Configuração do Route 53: Health checks 
+![DNS](./evidencias/print3-route53.png)
 ---
 
 ## 🔁 Passo a passo (via Console)
