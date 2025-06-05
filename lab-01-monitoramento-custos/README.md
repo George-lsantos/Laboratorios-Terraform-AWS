@@ -21,9 +21,8 @@
 
 ### 1. Configurar Billing Preferences
 
-- ✔️ Ativado o envio de faturas em PDF por e-mail
-- ✔️ Habilitada a opção de receber alertas ao exceder o Free Tier
-- ✔️ Ativado o envio de métricas de cobrança para o CloudWatch
+- ✔️ **Invoice delivery preferences** ativado para receber as faturas em PDF por e-mail.
+- ✔️ **Alert preferences habilitado** para enviar alertas quando o uso se aproxima ou excede os limites do **AWS Free Tier**. Além disso, enviar alertas de cobrança via **Amazon CloudWatch Billing Alerts**.
 
 📸 **Evidência**  
 ![Billing Preferences](./evidencias/1-billing-preferences.png)
