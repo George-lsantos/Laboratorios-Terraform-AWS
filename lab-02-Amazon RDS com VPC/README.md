@@ -14,7 +14,8 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 - Conectividade controlada via Bastion Host (SSH)
 - Monitoramento ativo com Enhanced Monitoring
 - Backup habilitado (automático por padrão)
-
+### Instância ec2 Criada
+![RDS](./evidencias/vpc-dashboard.png)
 ---
 
 ## 🛠️ Serviços utilizados
