@@ -23,7 +23,16 @@ Garantir alta disponibilidade simulando falha de instância com:
 ---
 
 ## 📸 Evidências
+## 🔁 Passo a passo (via Console)
 
+1. Criar duas instâncias EC2 (em AZs diferentes)
+2. Instalar Apache manualmente via SSM
+3. Criar zona hospedada no Route 53
+4. Adicionar dois registros A com política de failover
+5. Criar verificação de integridade para a instância primária
+6. Configurar SNS para alertas
+7. Testar failover desligando a instância primária
+   
 ### Diagrama da Solução
 ![Diagrama](./evidencias/diagrama.png)
 
@@ -44,15 +53,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 ![site](./evidencias/print4-sns.png)
 ![site](./evidencias/print5-sns.png)
 ---
-## 🔁 Passo a passo (via Console)
 
-1. Criar duas instâncias EC2 (em AZs diferentes)
-2. Instalar Apache manualmente via SSM ou SSH
-3. Criar zona hospedada no Route 53
-4. Adicionar dois registros A com política de failover
-5. Criar verificação de integridade para a instância primária
-6. Configurar SNS para alertas
-7. Testar failover desligando a instância primária
 
 ---
 
