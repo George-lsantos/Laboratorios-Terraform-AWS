@@ -28,16 +28,20 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 ---
 ###  Banco de dados RDS
 - Um banco de dados MySQL foi provisionado em uma das sub-redes privadas (10.0.2.0/23)
-- ![RDS](./evidencias/sg-mysql.png)
+  ![RDS](./evidencias/sg-mysql.png)
 ---
 ### Linux Bastion Host
 - Uma instância Linux Bastion Host, localizada em uma sub-rede pública, foi criada para permitir acesso seguro ao banco de dados
-- ![Bastion ](./evidencias/Bastion.png)
+  ![Bastion ](./evidencias/Bastion.png)
 ---
 ### Teste de conectividade
 - Teste de conectividade mostrou que a EC2 e o RDS (porta 3306) está funcionando corretamente
-- ![Bastion ](./evidencias/conectividade.png)
-- ![Bastion ](./evidencias/conectividade2.png)
+  ![Bastion ](./evidencias/conectividade.png)
+  ![Bastion ](./evidencias/conectividade2.png)
+---
+### Enhanced Monitoring 
+- Foi habilitado o Enhanced Monitoring para monitoramento
+ ![Bastion ](./evidencias/Monitoring.png)
 ---
 ## 🛠️ Serviços utilizados
 
