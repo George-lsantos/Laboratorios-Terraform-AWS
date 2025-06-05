@@ -23,7 +23,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 ---
 
 
-## 🔁 Passo a passo (via Console)
+## 🔁 Passo a passo
 
 1. Criar duas instâncias EC2 (em AZs diferentes)
 2. Instalar Apache manualmente via SSM
