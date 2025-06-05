@@ -3,7 +3,8 @@
 Este laboratório demonstra como criar um ambiente seguro e funcional utilizando o **Amazon RDS**, com conectividade controlada por uma **VPC personalizada** e boas práticas de segurança e monitoramento.
 
 ---
-
+### Diagrama da Solução
+![Diagrama](./evidencias/diagrama.png)
 ## ✅ Objetivo
 
 Provisionar uma instância **Amazon RDS (MySQL)** com:
@@ -57,8 +58,7 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 
 ## 📸 Evidências
 
-### Diagrama da Solução
-![Diagrama](./evidencias/diagrama.png)
+
 
 ### Instância RDS Criada
 ![RDS](./evidencias/rds-dashboard.png)
