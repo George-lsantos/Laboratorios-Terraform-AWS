@@ -1,3 +1,4 @@
-# Problema 1: **O custo da infraestrutura** disparou do dia para a noite e ninguém sabia o porquê."
+# Como configurar alertas de orçamento e fatura na AWS
+Recentemente, configurei as preferências de faturamento **(Billing Preferences)** e o **AWS Budgets** para receber alertas do uso dos serviços da AWS. Isso é fundamental para evitar surpresas com cobranças indesejadas, principalmente quando utilizamos o nível gratuito.
+---
 
-Este laboratório demonstra como configurar **failover DNS entre duas instâncias EC2** usando **Amazon Route 53**, com verificações de integridade e notificações via SNS.
