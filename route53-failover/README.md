@@ -22,7 +22,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 
 ---
 
-## 📸 Evidências
+
 ## 🔁 Passo a passo (via Console)
 
 1. Criar duas instâncias EC2 (em AZs diferentes)
@@ -32,7 +32,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 5. Criar verificação de integridade para a instância primária
 6. Configurar SNS para alertas
 7. Testar failover desligando a instância primária
-   
+---   
 ### Diagrama da Solução
 ![Diagrama](./evidencias/diagrama.png)
 
@@ -51,6 +51,7 @@ Garantir alta disponibilidade simulando falha de instância com:
 ### 🔷 Notificação de Failover
 📩 Notificação recebida via **SNS** após desligar a EC2 primária:
 ![site](./evidencias/print4-sns.png)
+
 ![site](./evidencias/print5-sns.png)
 ---
 
