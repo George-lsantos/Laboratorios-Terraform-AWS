@@ -24,6 +24,11 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 ###  Foram configurados dois grupos de segurança
 - SG-Bastion-Host: com uma regra de entrada (Inbound Rule) permitindo acesso via SSH (porta 22) exclusivamente a partir do meu IP.
 - SG-Database: com uma regra permitindo acesso à porta do MYSQL(porta 3306) somente a partir do grupo de segurança SG-Bastion-Host, garantindo assim maior segurança na comunicação entre as instâncias.
+![RDS](./evidencias/vpc-gs.png)
+---
+###  Banco de dados RDS
+- Um banco de dados MySQL foi provisionado em uma das sub-redes privadas (10.0.2.0/23)
+- ![RDS](./evidencias/sg-mysql.png)
 ---
 ## 🛠️ Serviços utilizados
 
