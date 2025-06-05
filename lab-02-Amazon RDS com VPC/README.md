@@ -14,10 +14,17 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 - Conectividade controlada via Bastion Host (SSH)
 - Monitoramento ativo com Enhanced Monitoring
 - Backup habilitado (automático por padrão)
-### Instância ec2 Criada
+### VPC - Foi criada uma VPC com o CIDR block 10.0.0.0/16, contendo as seguintes sub-redes:
+- Sub-redes públicas: 10.0.0.0/24 e 10.0.1.0/24
+- Sub-redes privadas: 10.0.2.0/23 e 10.0.4.0/23
+- NAT
+- IGW
 ![RDS](./evidencias/vpc-dashboard.png)
 ---
-
+###  Foram configurados dois grupos de segurança
+- SG-Bastion-Host: com uma regra de entrada (Inbound Rule) permitindo acesso via SSH (porta 22) exclusivamente a partir do meu IP.
+- SG-Database: com uma regra permitindo acesso à porta do MYSQL(porta 3306) somente a partir do grupo de segurança SG-Bastion-Host, garantindo assim maior segurança na comunicação entre as instâncias.
+---
 ## 🛠️ Serviços utilizados
 
 - Amazon VPC (com sub-redes, IGW e NAT)
