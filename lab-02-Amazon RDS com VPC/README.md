@@ -81,20 +81,3 @@ Provisionar uma instância **Amazon RDS (MySQL)** com:
 7. Ativado o **Enhanced Monitoring** para a instância RDS.
 
 ---
-
-## 📸 Evidências
-
-
-
-### Instância RDS Criada
-![RDS](./evidencias/rds-dashboard.png)
-
-### EC2 Bastion
-![EC2](./evidencias/ec2-bastion.png)
-
-### Regras de Segurança
-![SG](./evidencias/security-groups.png)
-
-### Teste de Conectividade
-```bash
-mysql -h <endpoint> -u admin -p
