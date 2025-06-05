@@ -1,4 +1,4 @@
-# 🧪 LAB AWS - Failover com Route 53 (via Console)
+# 🧪 LAB AWS - Failover com Route 53
 
 Este laboratório demonstra como configurar **failover DNS entre duas instâncias EC2** usando **Amazon Route 53**, com verificações de integridade e notificações via SNS.
 
