@@ -16,7 +16,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 | Componente | Screenshot |
 |-----------|------------|
-| Load Balancer | ![Load Balancer](outputs/screenshots/loadbalancer.png) |
+| 1. **Criação de uma AMI personalizada**| ![AMI](evidencias/AMI.png) |
 | Instâncias Auto Scaling | ![Instâncias](outputs/screenshots/instances.png) |
 | Métricas de Auto Scaling | ![Métricas](outputs/screenshots/metrics.png) |
 
