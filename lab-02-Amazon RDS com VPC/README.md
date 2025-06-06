@@ -1,4 +1,4 @@
-# 🧪 LAB AWS - Amazon RDS com VPC Personalizada (via Console)
+# 🧪 LAB AWS - Amazon RDS com VPC Personalizada
 
 Este laboratório demonstra como criar um ambiente seguro e funcional utilizando o **Amazon RDS**, com conectividade controlada por uma **VPC personalizada** e boas práticas de segurança e monitoramento.
 
