@@ -17,8 +17,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | Componente | Screenshot |
 |-----------|------------|
 | 1. **Criação de uma AMI personalizada**| ![AMI](evidencias/AMI.png) |
-| Instâncias Auto Scaling | ![Instâncias](outputs/screenshots/instances.png) |
-| Métricas de Auto Scaling | ![Métricas](outputs/screenshots/metrics.png) |
+| 2. **Launch Templates**  | ![AMI](evidencias/Launch.png) |
 
 ## 🧠 Arquitetura
 
