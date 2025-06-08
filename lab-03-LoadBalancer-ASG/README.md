@@ -28,7 +28,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | 4. **Application Load Balancer (ALB)**  | ![AMI](evidencias/alba.png) |
 | 5. **Target Group**  | ![AMI](evidencias/tg.png) |
 | 6. **Testes e validações**  | ![AMI](evidencias/teste1.png) |
-| 7. **Testes e validações**  | ![AMI](evidencias/teste1.png) |
+| 7. **Testes e validações**  | ![AMI](evidencias/teste2.png) |
 
 
 ## 🧠 Arquitetura
