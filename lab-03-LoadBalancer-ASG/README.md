@@ -21,6 +21,8 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 |-----------|------------|
 | 1. **Criação de uma AMI personalizada**| ![AMI](evidencias/AMI.png) |
 | 2. **Launch Templates**  | ![AMI](evidencias/Launch.png) |
+| 3. **Security Groups**  | ![AMI](evidencias/sg.png) |
+
 
 ## 🧠 Arquitetura
 
