@@ -10,12 +10,13 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 3. **Security Groups**: SG do Load Balancer: permite HTTP/HTTPS de `0.0.0.0/0` e SG das EC2: permite HTTP/HTTPS **apenas do SG do Load Balancer**
 4. **Application Load Balancer (ALB)** criado e integrado ao Target Group.
 5. **Target Group** para registrar as instâncias EC2 automaticamente.
+6. **Testes e validações** de balanceamento de carga e escalabilidade.
 
-6. **Application Load Balancer (ALB)** criado e integrado ao Target Group.
-7. **Auto Scaling Group** configurado com políticas de escala mínima, máxima e desejada.
-8. **Target Group** para registrar as instâncias EC2 automaticamente.
-9. 
-10. Testes e validações de balanceamento de carga e escalabilidade.
+7. **Application Load Balancer (ALB)** criado e integrado ao Target Group.
+8. **Auto Scaling Group** configurado com políticas de escala mínima, máxima e desejada.
+9. **Target Group** para registrar as instâncias EC2 automaticamente.
+10. 
+11. Testes e validações de balanceamento de carga e escalabilidade.
 
 ## 📷 Evidências
 
@@ -25,8 +26,9 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | 2. **Launch Templates**  | ![AMI](evidencias/Launch.png) |
 | 3. **Security Groups**  | ![AMI](evidencias/sg.png) |
 | 4. **Application Load Balancer (ALB)**  | ![AMI](evidencias/alba.png) |
-| 4. **Target Group**  | ![AMI](evidencias/tg.png) |
-
+| 5. **Target Group**  | ![AMI](evidencias/tg.png) |
+| 6. **Testes e validações**  | ![AMI](evidencias/teste1.png) |
+| 7. **Testes e validações**  | ![AMI](evidencias/teste1.png) |
 
 
 ## 🧠 Arquitetura
