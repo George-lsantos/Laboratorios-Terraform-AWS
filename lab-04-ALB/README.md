@@ -11,12 +11,10 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 4. **Application Load Balancer (ALB)** criado e integrado ao Target Group.
 5. **Target Group** para registrar as instâncias EC2 automaticamente.
 6. **Testes e validações** de balanceamento de carga e escalabilidade.
-
 7. **Application Load Balancer (ALB)** criado e integrado ao Target Group.
 8. **Auto Scaling Group** configurado com políticas de escala mínima, máxima e desejada.
 9. **Target Group** para registrar as instâncias EC2 automaticamente.
-10. 
-11. Testes e validações de balanceamento de carga e escalabilidade.
+10. Testes e validações de balanceamento de carga e escalabilidade.
 
 ## 📷 Evidências
 
