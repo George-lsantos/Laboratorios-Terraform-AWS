@@ -44,7 +44,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 | Componente                               | Screenshot                |
 |------------------------------------------|----------------------------|
-| 1. Launch Template                       | ![LT](evidencias/Launch.png) |
+| 1. Launch Template                       | ![LT](evidencias/Launch1.png) |
 | 2. Security Groups                       | ![SG](evidencias/sg.png)  |
 | 3. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
 | 4. Target Group                          | ![TG](evidencias/tg.png)  |
