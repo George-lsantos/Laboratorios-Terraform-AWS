@@ -41,3 +41,52 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 ## 🧠 Arquitetura
 
 ![Diagrama de Arquitetura](arquitetura.png)
+
+
+## 🔧 Etapas Realizadas (foco no Auto Scaling Group)
+
+- Auto Scaling Group criado com as seguintes configurações:
+  - **Nome do ASG**: `ASG-LAB`
+  - **Launch Template**: `Launch-LAB` (`lt-07f2c52e4ffdded04`), versão `Default (v1)`
+  - **VPC**: `vpc-009eb8b33026995d1`
+  - **Subnets**:
+    - `us-east-1a`: `subnet-06ad386c140a7724f` (10.0.2.0/23)
+    - `us-east-1b`: `subnet-0318f09dca67eb6d3` (10.0.4.0/23)
+  - **Distribuição entre AZs**: Balanced (melhor esforço)
+  - **Tipo de instância**: herdado do Launch Template
+
+- Integração com Load Balancer:
+  - **Nome do ALB**: `ELB-web`
+  - **Tipo**: Application Load Balancer (HTTP)
+  - **Target Group**: `TG-LAB`
+  - **Health checks**:
+    - Tipo: EC2 e ELB
+    - Grace period: 60 segundos
+
+- Políticas de escalonamento:
+  - Capacidade **desejada**: 1 instância
+  - Capacidade **mínima**: 1
+  - Capacidade **máxima**: 4
+  - **Target Tracking Policy**:
+    - Métrica: **CPU Utilization**
+    - Alvo: 50%
+    - Cooldown: 60 segundos
+    - **Scale-in** habilitado
+
+- Outras configurações:
+  - **Instance Scale-in Protection**: desabilitado
+  - **Default Instance Warmup**: desabilitado
+  - **Monitoring**: habilitado
+  - **Capacity Reservation Preference**: default
+
+- Notificações via SNS:
+  - Tópico: `Noticante-Padrao`
+  - Eventos:
+    - Launch
+    - Terminate
+    - Fail to Launch
+    - Fail to Terminate
+
+- Tags aplicadas:
+  - `Name: LAB ASG` (aplicada automaticamente às instâncias)
+
