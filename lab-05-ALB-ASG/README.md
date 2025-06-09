@@ -5,8 +5,6 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 ---
 
 ## 🔧 Etapas Realizadas
-
-- Criação de uma AMI personalizada com Apache instalado via script `user_data.sh`.
 - Launch Template criado com base na AMI.
 - Security Groups:
   - SG do Load Balancer: permite HTTP/HTTPS de `0.0.0.0/0`
@@ -21,30 +19,6 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 - Testes e validações de balanceamento de carga e escalabilidade:
   - Acesso via ALB redireciona para múltiplas instâncias com conteúdo diferente.
   - Requisições alternam entre EC2s, validando o balanceamento.
-
----
-
-## 📷 Evidências
-
-| Componente                               | Screenshot                      |
-|------------------------------------------|----------------------------------|
-| 1. Criação de uma AMI personalizada      | ![AMI](evidencias/AMI.png)      |
-| 2. Launch Template                       | ![Launch](evidencias/Launch.png)|
-| 3. Security Groups                       | ![SG](evidencias/sg.png)        |
-| 4. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)     |
-| 5. Target Group                          | ![TG](evidencias/tg.png)        |
-| 6. Validação do Balanceamento 1          | ![Teste1](evidencias/teste1.png)|
-| 7. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
-
----
-
-## 🧠 Arquitetura
-
-![Diagrama de Arquitetura](arquitetura.png)
-
-
-## 🔧 Etapas Realizadas (foco no Auto Scaling Group)
-
 - Auto Scaling Group criado com as seguintes configurações:
   - **Nome do ASG**: `ASG-LAB`
   - **Launch Template**: `Launch-LAB` (`lt-07f2c52e4ffdded04`), versão `Default (v1)`
@@ -89,4 +63,28 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 - Tags aplicadas:
   - `Name: LAB ASG` (aplicada automaticamente às instâncias)
+
+
+---
+
+## 📷 Evidências
+
+| Componente                               | Screenshot                      |
+|------------------------------------------|----------------------------------|
+| 1. Criação de uma AMI personalizada      | ![AMI](evidencias/AMI.png)      |
+| 2. Launch Template                       | ![Launch](evidencias/Launch.png)|
+| 3. Security Groups                       | ![SG](evidencias/sg.png)        |
+| 4. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)     |
+| 5. Target Group                          | ![TG](evidencias/tg.png)        |
+| 6. Validação do Balanceamento 1          | ![Teste1](evidencias/teste1.png)|
+| 7. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
+
+---
+
+## 🧠 Arquitetura
+
+![Diagrama de Arquitetura](arquitetura.png)
+
+
+## 🔧 Etapas Realizadas (foco no Auto Scaling Group)
 
