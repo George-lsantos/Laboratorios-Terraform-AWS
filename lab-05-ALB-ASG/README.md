@@ -44,13 +44,12 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 | Componente                               | Screenshot                |
 |------------------------------------------|----------------------------|
-| 1. Criação de AMI personalizada          | ![AMI](evidencias/AMI.png)|
-| 2. Launch Template                       | ![LT](evidencias/Launch.png) |
-| 3. Security Groups                       | ![SG](evidencias/sg.png)  |
-| 4. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
-| 5. Target Group                          | ![TG](evidencias/tg.png)  |
-| 6. Validação do Balanceamento 1          | ![Teste1](evidencias/teste1.png)|
-| 7. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
+| 1. Launch Template                       | ![LT](evidencias/Launch.png) |
+| 2. Security Groups                       | ![SG](evidencias/sg.png)  |
+| 3. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
+| 4. Target Group                          | ![TG](evidencias/tg.png)  |
+| 5. Validação do Balanceamento 1          | ![Teste1](evidencias/teste1.png)|
+| 6. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
 
 ---
 
