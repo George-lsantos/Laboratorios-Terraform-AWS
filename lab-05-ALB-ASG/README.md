@@ -1,6 +1,11 @@
 # Laboratório AWS: Load Balancer com Auto Scaling Group (ASG)
 
 Este laboratório demonstra a criação de uma infraestrutura escalável e tolerante a falhas usando os principais serviços da AWS: **VPC, EC2, AMI, Launch Template, Target Group, Auto Scaling Group (ASG)** e **Application Load Balancer (ALB)**.
+---
+
+## 🧠 Arquitetura
+
+![Diagrama de Arquitetura](arquitetura.png)
 
 ---
 
@@ -53,8 +58,3 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | 6. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
 | 7. Activity notifications       | ![Teste1](evidencias/ntf.png)|
 
----
-
-## 🧠 Arquitetura
-
-![Diagrama de Arquitetura](arquitetura.png)
