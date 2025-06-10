@@ -32,8 +32,10 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
   - Configurada notificação **SNS Topic** por e-mail e SMS para eventos de escalonamento.
 
 - **Testes de balanceamento**:  
-  - Requisições alternam entre diferentes instâncias EC2 com respostas distintas via ALB.  
+  - Requisições alternam entre diferentes instâncias EC2 com respostas distintas via ALB.
+  - Uso do `stress` e validação no console.
   - A distribuição foi validada acessando o DNS público do Load Balancer.
+    
 
 
 ---
