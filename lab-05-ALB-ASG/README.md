@@ -47,7 +47,8 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | 1. Launch Template                       | ![LT](evidencias/Launch1.png) |
 | 2. Security Groups                       | ![SG](evidencias/sg.png)  |
 | 3. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
-| 4. Target Group                          | ![TG](evidencias/tg.png)  |
+| 4. Target Group                          | ![TG](evidencias/tg1.png)  |
+| 5. Auto Scaling Group                       | ![TG](evidencias/ASG.png)  |
 | 5. Validação do Balanceamento 1          | ![Teste1](evidencias/teste1.png)|
 | 6. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
 
