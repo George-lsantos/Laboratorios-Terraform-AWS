@@ -4,7 +4,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 ---
 
-## 🧠 Arquitetura
+##  Arquitetura
 
 ![Diagrama de Arquitetura](evidencias/arquitetura.png)
 
