@@ -29,6 +29,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
   - Criado nas subnets privadas.  
   - Capacidade: mínima `1`, desejada `1`, máxima `4`.  
   - Política de escalonamento baseada em **uso de CPU > 70%**.
+  - Configurada notificação **SNS Topic** por e-mail e SMS para eventos de escalonamento.
 
 - **Testes de balanceamento**:  
   - Requisições alternam entre diferentes instâncias EC2 com respostas distintas via ALB.  
