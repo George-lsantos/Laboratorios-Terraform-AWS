@@ -18,26 +18,6 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 ---
 
-## 🔁 Configuração do Auto Scaling Group
-
-- **Nome**: `ASG-LAB`
-- **Launch Template**: `Launch-LAB` (`lt-07f2c52e4ffdded04`) – versão default (v1)
-- **VPC**: `vpc-009eb8b33026995d1`
-- **Subnets**:
-  - `us-east-1a`: `subnet-06ad386c140a7724f`
-  - `us-east-1b`: `subnet-0318f09dca67eb6d3`
-- **Distribuição entre AZs**: Balanced
-- **Tipo de instância**: herdado do Launch Template
-- **Load Balancer**: `ELB-web` (Application/HTTP)
-- **Target Group**: `TG-LAB`
-- **Health Checks**: EC2 + ELB, com `grace period` de 60 segundos
-- **Scaling Policy**: Target tracking (CPU utilization 50%), cooldown 60s
-- **Monitoramento**: habilitado
-- **Notificações SNS**: `Noticante-Padrao` com eventos de lançamento e término
-- **Tag automática nas instâncias**: `Name = LAB ASG`
-
----
-
 ## 📷 Evidências
 
 | Componente                               | Screenshot                |
