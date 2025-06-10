@@ -14,7 +14,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 - **Target Group** configurado com health check e registro automático das instâncias.
 - **Auto Scaling Group (ASG)** com:
   - Capacidade: mínima `1`, desejada `1`, máxima `4`.
-  - Escalonamento baseado em **CPU > 50%**.
+  - Escalonamento baseado em **CPU > 70%**.
 - **Testes de balanceamento**:
   - Requisições alternam entre instâncias EC2 com respostas distintas via ALB.
 
