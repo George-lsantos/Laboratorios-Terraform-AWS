@@ -56,17 +56,12 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 |------------------------------------------|----------------------------|
 | 0. VPC                     | ![LT](evidencias/vpc.png) |
 | 1. Route 53                  | ![LT](evidencias/route53.png) |
-| 2. AWS Certificate Manager         | ![LT](evidencias/acm.png) |
-
-
-
-
-
-| 1. Launch Template                       | ![LT](evidencias/Launch1.png) |
-| 2. Security Groups                       | ![SG](evidencias/sg.png)  |
-| 3. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
-| 4. Target Group                          | ![TG](evidencias/tg1.png)  |
-| 5. Auto Scaling Group                       | ![TG](evidencias/ASG.png)  |
-| 6. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
-| 7. Activity notifications       | ![Teste1](evidencias/ntf.png)|
+| 2. AWS Certificate Manager         | ![LT](evidencias/cm.png) |
+| 4. Launch Template                       | ![LT](evidencias/Launch1.png) |
+| 5. Security Groups                       | ![SG](evidencias/sg.png)  |
+| 6. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
+| 7. Target Group                          | ![TG](evidencias/tg1.png)  |
+| 8. Auto Scaling Group                       | ![TG](evidencias/ASG.png)  |
+| 9. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
+| 10. Activity notifications       | ![Teste1](evidencias/ntf.png)|
 
