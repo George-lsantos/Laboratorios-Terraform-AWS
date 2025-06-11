@@ -72,6 +72,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | ALB com Listeners and rules           | ![listeners](evidencias/listeners.png)         |
 | Validação o https://www.tecnologiaaws.site/     | ![https](evidencias/https.png)|
 | Validação do Balanceamento     | ![Validação](evidencias/teste2.png)|
+| Validação do Balanceamento - Activity history     | ![Validação](evidencias/teste3.png)|
 | Notificações (SNS)             | ![SNS](evidencias/ntf.png)         |
 
 ---
