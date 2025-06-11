@@ -1,4 +1,4 @@
-# 🚀 Laboratório AWS: Load Balancer + Auto Scaling + Route 53 + SSL com ACM
+# Laboratório AWS: Load Balancer + Auto Scaling + Route 53 + SSL com ACM
 
 Este laboratório demonstra a criação de uma infraestrutura escalável e tolerante a falhas usando os principais serviços da AWS: **VPC, EC2, AMI, Launch Template, Target Group, Auto Scaling Group (ASG)** e **Application Load Balancer (ALB)** com domínio e SSL.
 
