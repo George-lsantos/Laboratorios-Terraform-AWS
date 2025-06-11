@@ -68,9 +68,8 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | Route 53                        | ![Route 53](evidencias/route53.png)|
 | AWS Certificate Manager (ACM)   | ![ACM](evidencias/cm.png)          |
 | Launch Template                 | ![LT](evidencias/Launch1.png)      |
-| Application Load Balancer      | ![ALB](evidencias/alba.png)        |
 | Target Group                    | ![TG](evidencias/tg1.png)          |
-| Listeners and rules           | ![listeners](evidencias/listeners.png)         |
+| ALB com Listeners and rules           | ![listeners](evidencias/listeners.png)         |
 | Validação o https://www.tecnologiaaws.site/     | ![https](evidencias/https.png)|
 | Validação do Balanceamento     | ![Validação](evidencias/teste2.png)|
 | Notificações (SNS)             | ![SNS](evidencias/ntf.png)         |
