@@ -16,8 +16,11 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
   - Um Internet Gateway (IGW) foi associado à VPC para saída de internet nas subnets públicas.  
   - Uma NAT Gateway foi configurada para permitir acesso à internet das instâncias em subnets privadas.  
   - Acesso via SSH às instâncias da ASG está restrito apenas ao meu IP.
+    
 - **Route 53**: Resolve o nome do domínio www.tecnologiaaws.site para o IP (ou DNS) do Load Balancer.
+  
 - **AWS Certificate Manager**: 	Emite e armazena o certificado SSL usado pelo ALB. Não processa requisições diretamente.
+  
 - **Launch Template**: Criado com base em uma AMI personalizada contendo o Apache pré-instalado e configurado.
 
 - **Security Groups**:  
@@ -52,7 +55,8 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | Componente                               | Screenshot                |
 |------------------------------------------|----------------------------|
 | 0. VPC                     | ![LT](evidencias/vpc.png) |
-| 1. Route 536                  | ![LT](evidencias/route53.png) |
+| 1. Route 53                  | ![LT](evidencias/route53.png) |
+| 2. AWS Certificate Manager         | ![LT](evidencias/acm.png) |
 
 
 
