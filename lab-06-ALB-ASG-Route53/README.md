@@ -60,3 +60,19 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 - Acesso ao domínio e análise de comportamento do ALB.
 
 ---
+## 📷 Evidências
+
+| Componente                      | Screenshot                         |
+|---------------------------------|-------------------------------------|
+| VPC                             | ![VPC](evidencias/vpc.png)          |
+| Route 53                        | ![Route 53](evidencias/route53.png)|
+| AWS Certificate Manager (ACM)   | ![ACM](evidencias/cm.png)          |
+| Launch Template                 | ![LT](evidencias/Launch1.png)      |
+| Security Groups                 | ![SG](evidencias/sg.png)           |
+| Application Load Balancer      | ![ALB](evidencias/alba.png)        |
+| Target Group                    | ![TG](evidencias/tg1.png)          |
+| Auto Scaling Group              | ![ASG](evidencias/ASG.png)         |
+| Validação do Balanceamento     | ![Validação](evidencias/teste2.png)|
+| Notificações (SNS)             | ![SNS](evidencias/ntf.png)         |
+
+---
