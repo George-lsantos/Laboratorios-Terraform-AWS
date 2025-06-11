@@ -11,58 +11,52 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 
 ---
 
-## 🔧 Etapas Realizadas
+---
 
-- **VPC**: Criadas 2 subnets públicas e 2 subnets privadas em diferentes zonas de disponibilidade.  
-  - Um Internet Gateway (IGW) foi associado à VPC para saída de internet nas subnets públicas.  
-  - Uma NAT Gateway foi configurada para permitir acesso à internet das instâncias em subnets privadas.  
-  - Acesso via SSH às instâncias da ASG está restrito apenas ao meu IP.
-    
-- **Route 53**: Resolve o nome do domínio www.tecnologiaaws.site para o IP (ou DNS) do Load Balancer.
+## 📋 Etapas Realizadas
+
+### 🔹 VPC
+- Criadas 2 subnets públicas e 2 subnets privadas em diferentes zonas de disponibilidade (AZs).
+- Internet Gateway (IGW) associado à VPC.
+- NAT Gateway para dar acesso externo às instâncias privadas.
+- Acesso SSH restrito ao meu IP.
+
+### 🔹 Route 53
+- Configurado domínio customizado `www.tecnologiaaws.site` apontando para o Load Balancer (ALIAS record).
   
-- **AWS Certificate Manager**: 	Emite e armazena o certificado SSL usado pelo ALB. Não processa requisições diretamente.
-  
-- **Launch Template**: Criado com base em uma AMI personalizada contendo o Apache pré-instalado e configurado.
+### 🔹 AWS Certificate Manager (ACM)
+- Certificado público emitido gratuitamente com validação DNS.
+- Integrado ao ALB para suporte HTTPS (TLS).
 
-- **Security Groups**:  
-  - **Load Balancer**: Permite tráfego HTTP/HTTPS de `0.0.0.0/0`.  
-  - **Instâncias EC2 (ASG)**: Permite tráfego HTTP/HTTPS **apenas** do Security Group do Load Balancer (boa prática de segurança).
+### 🔹 Launch Template
+- Criado com base em uma AMI personalizada com Apache instalado e configurado.
 
-- **Application Load Balancer (ALB)**:  
-  - Criado em subnets públicas.  
-  - Integrado a um Target Group que registra instâncias automaticamente via ASG.
+### 🔹 Security Groups
+- **ALB**: permite HTTP/HTTPS (`0.0.0.0/0`).
+- **Instâncias EC2 (ASG)**: só recebem tráfego do SG do ALB.
 
-- **Target Group**:  
-  - Health check configurado em `/` via porta 80.  
-  - Registro automático das instâncias da ASG.
+### 🔹 Application Load Balancer (ALB)
+- Deploy em subnets públicas.
+- Listener HTTP e HTTPS.
+- Redirecionamento automático de HTTP → HTTPS.
+- Integrado com Target Group.
 
-- **Auto Scaling Group (ASG)**:  
-  - Criado nas subnets privadas.  
-  - Capacidade: mínima `1`, desejada `1`, máxima `4`.  
-  - Política de escalonamento baseada em **uso de CPU > 70%**.
-  - Configurada notificação **SNS Topic** por e-mail e SMS para eventos de escalonamento.
+### 🔹 Target Group
+- Health checks via HTTP no path `/`.
+- Instâncias registradas automaticamente pelo ASG.
 
-- **Testes de balanceamento**:  
-  - Requisições alternam entre diferentes instâncias EC2 com respostas distintas via ALB.
-  - Uso do `stress` e validação no console.
-  - A distribuição foi validada acessando o DNS público do Load Balancer.
-    
-
+### 🔹 Auto Scaling Group (ASG)
+- Rodando nas subnets privadas.
+- Capacidade mínima: `1`, desejada: `1`, máxima: `4`.
+- Políticas baseadas em CPU > 70%.
+- Notificações via SNS (e-mail e SMS).
 
 ---
 
-## 📷 Evidências
+## Testes de balanceamento
 
-| Componente                               | Screenshot                |
-|------------------------------------------|----------------------------|
-| 0. VPC                     | ![LT](evidencias/vpc.png) |
-| 1. Route 53                  | ![LT](evidencias/route53.png) |
-| 2. AWS Certificate Manager         | ![LT](evidencias/cm.png) |
-| 4. Launch Template                       | ![LT](evidencias/Launch1.png) |
-| 5. Security Groups                       | ![SG](evidencias/sg.png)  |
-| 6. Application Load Balancer (ALB)       | ![ALB](evidencias/alba.png)|
-| 7. Target Group                          | ![TG](evidencias/tg1.png)  |
-| 8. Auto Scaling Group                       | ![TG](evidencias/ASG.png)  |
-| 9. Validação do Balanceamento 2          | ![Teste2](evidencias/teste2.png)|
-| 10. Activity notifications       | ![Teste1](evidencias/ntf.png)|
+- Apache com variação em instâncias para validação visual.
+- Uso da ferramenta `stress` para forçar scaling.
+- Acesso ao domínio e análise de comportamento do ALB.
 
+---
