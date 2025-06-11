@@ -72,6 +72,7 @@ Este laboratório demonstra a criação de uma infraestrutura escalável e toler
 | Application Load Balancer      | ![ALB](evidencias/alba.png)        |
 | Target Group                    | ![TG](evidencias/tg1.png)          |
 | Auto Scaling Group              | ![ASG](evidencias/ASG.png)         |
+| Validação o https://www.tecnologiaaws.site/     | ![https](evidencias/https.png)|
 | Validação do Balanceamento     | ![Validação](evidencias/teste2.png)|
 | Notificações (SNS)             | ![SNS](evidencias/ntf.png)         |
 
