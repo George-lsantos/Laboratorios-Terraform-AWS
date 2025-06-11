@@ -11,5 +11,5 @@ Bem-vindo ao meu Portfólio de Projetos na AWS! Este repositório reúne uma var
 | 03 | Route 53 com Failover           | Configuração de failover DNS com Route 53 e health checks                 | [Acessar](./lab-03-route53-failover) |
 | 04 | Load Balancer| Implementação de ALB e redirecionamento HTTPS   | [Acessar](./lab-04-ALB) |
 | 05 | Load Balancer com Auto Scaling  | Implementação de ALB + ASG com instâncias EC2 e redirecionamento HTTPS   | [Acessar](./lab-05-ALB-ASG) |
-| 06 | Load Balancer| Implementação de ALB, ASG, Route 53 e redirecionamento HTTPS   | [Acessar](./lab-05-ALB-ASG-Route53) |
+| 06 | Load Balancer| Implementação de ALB, ASG, Route 53 e redirecionamento HTTPS   | [Acessar](./lab-06-ALB-ASG-Route53) |
 ---
