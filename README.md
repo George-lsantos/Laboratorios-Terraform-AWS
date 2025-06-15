@@ -9,7 +9,7 @@ Este repositório reúne laboratórios práticos com foco em **arquitetura**, **
 |-----|--------------------------------------------------|---------------------------------------------------------------------------|---------|
 | 01  | Monitoramento de Custos                          | Alarme de orçamento com alertas via CloudWatch                           | [🔗 Acessar](./lab-01-monitoramento) |
 | 02  | S3 Cross-Account Replication                     | Replicação de objetos entre contas AWS via S3                            | [🔗 Acessar](./lab-02-s3-cross-account-replication) |
-| 03  | Site Estático com S3 + CloudFront + Route 53 + ACM| Hospedagem de site estático com domínio, CDN e certificado SSL/TLS       | [🔗 Acessar](./lab-03-static-website-cloudfront-acm) |
+| 03  | Site Estático com S3 + CloudFront + Route 53 + ACM| Hospedagem de site estático com domínio, CDN e certificado SSL/TLS       | [🔗 Acessar](./lab-02-s3-static-website-Cloudfront-ACM) |
 | 04  | Route 53 com Failover                            | Failover DNS com Route 53 e health checks                                | [🔗 Acessar](./lab-04-route53-failover) |
 | 05  | Load Balancer (ALB)                              | ALB com redirecionamento HTTPS                                           | [🔗 Acessar](./lab-05-ALB) |
 | 06  | ALB com Auto Scaling                             | ALB com ASG e HTTPS redirection                                          | [🔗 Acessar](./lab-06-ALB-ASG) |
