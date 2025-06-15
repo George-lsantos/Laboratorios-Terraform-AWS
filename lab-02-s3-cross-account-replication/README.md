@@ -1,6 +1,6 @@
 # Amazon S3 Cross-Account Replication
 
-Este repositório demonstra como configurar a replicação de objetos de um bucket S3 em uma conta AWS para outro bucket em uma conta diferente.
+Este repositório demonstra como configurar a replicação de objetos de um bucket S3 em uma conta AWS para outro bucket em uma conta diferente..
 
 ---
 ---
@@ -24,7 +24,7 @@ Este repositório demonstra como configurar a replicação de objetos de um buck
 #### Bucket da Conta B (destination):
   - Criação do bucket de destino
   - Aplicação de Bucket Policy permitindo acesso da IAM Role da Conta A
-  - Verificação de replicação automática e manual bem-sucedida
+  - Verificação de replicação automática e manual bem-sucedida.
 
 
 ---
