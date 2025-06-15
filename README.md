@@ -16,5 +16,6 @@ Este repositório reúne laboratórios práticos com foco em **arquitetura**, **
 | 07  | ALB + ASG + Route 53 + ACM                       | Infra completa com domínio, SSL e escalabilidade                         | [🔗 Acessar](./lab-07-ALB-ASG-Route53) |
 | 08  | Amazon RDS com VPC                               | Instância RDS com controle de acesso via VPC                             | [🔗 Acessar](./lab-08-RDS) |
 
+
 ---
 ---
