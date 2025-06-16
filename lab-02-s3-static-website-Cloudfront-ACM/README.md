@@ -55,17 +55,3 @@ Este repositório demonstra como configurar a hospedagem de um site estático na
 
 ---
 ---
-## ⚙️ Comandos Terraform Utilizados
-
-```bash
-# Inicializar o ambiente Terraform
-terraform init
-
-# Planejar as mudanças
-terraform plan
-
-# Aplicar a infraestrutura
-terraform apply
-
-# Destruir toda a infraestrutura provisionada
-terraform destroy
