@@ -1,9 +1,20 @@
-Bem-vindo ao meu portfólio de projetos com a **Amazon Web Services (AWS)**!  
-Este repositório reúne laboratórios práticos com foco em **arquitetura**, **automação**, **monitoramento** e **escalabilidade** de soluções em nuvem. Os projetos variam de configurações básicas a integrações avançadas com múltiplos serviços da AWS.
+# 🌩️ Laboratórios Práticos em AWS – George Santos
+
+> Repositório com laboratórios de arquitetura e automação em nuvem usando serviços da AWS. Desenvolvido como parte do meu portfólio profissional como Cloud/DevOps Engineer.
+
+![Badge AWS](https://img.shields.io/badge/AWS-Prático-orange?style=for-the-badge&logo=amazonaws)
+![Badge Terraform](https://img.shields.io/badge/Terraform-InProgress-623CE4?style=for-the-badge&logo=terraform)
+![Badge DevOps](https://img.shields.io/badge/DevOps-Automação-blue?style=for-the-badge&logo=githubactions)
+---
+---
+
+## 🚀 Sobre
+
+Este repositório contém laboratórios práticos com foco em serviços essenciais da AWS. O objetivo é demonstrar habilidades de provisionamento, automação, alta disponibilidade e boas práticas de arquitetura em nuvem.
 
 ---
 ---
-## 🧪 Lista de Laboratórios
+## 📁 Laboratórios Disponíveis
 
 | Nº  | Projeto                                           | Descrição                                                                 | Link 📎 |
 |-----|--------------------------------------------------|---------------------------------------------------------------------------|---------|
@@ -19,4 +30,9 @@ Este repositório reúne laboratórios práticos com foco em **arquitetura**, **
 
 
 ---
+## ✍️ Autor
+
+**George Santos**  
+Cloud/DevOps Engineer | Certificado AWS & Azure Fundamentals  
+[LinkedIn](https://www.linkedin.com/in/george-lsantos/) • [GitHub](https://github.com/George-lsanto
 ---
