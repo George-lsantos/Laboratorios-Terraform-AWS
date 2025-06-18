@@ -3,7 +3,8 @@ Bem-vindo ao meu portfólio de projetos em Cloud e DevOps!
 > Repositório com laboratórios de arquitetura e automação em nuvem usando serviços da AWS. Desenvolvido como parte do meu portfólio profissional como Cloud/DevOps Engineer.
 Acesse também 👉 [www.tecnolcloud.com.br](https://www.tecnolcloud.com.br)
 💼 [LinkedIn](https://www.linkedin.com/in/george-lsantos/) • [GitHub](https://github.com/George-lsantos)
-
+---
+---
 ![Badge AWS](https://img.shields.io/badge/AWS-Prático-orange?style=for-the-badge&logo=amazonaws)
 ![Badge Terraform](https://img.shields.io/badge/Terraform-InProgress-623CE4?style=for-the-badge&logo=terraform)
 ![Badge DevOps](https://img.shields.io/badge/DevOps-Automação-blue?style=for-the-badge&logo=githubactions)
@@ -32,9 +33,4 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 
 
 ---
-## ✍️ Autor
-
-**George Santos**  
-Cloud/DevOps Engineer | Certificado AWS & Azure Fundamentals  
-[LinkedIn](https://www.linkedin.com/in/george-lsantos/) • [GitHub](https://github.com/George-lsanto
 ---
