@@ -65,7 +65,8 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em diferentes 
 
 | Componente                      | Screenshot                         |
 |---------------------------------|-------------------------------------|
-| ping bem-sucedidos da EC2 A para EC2 B                            | ![Ping](evidencias/ping.png)|
+| Ping bem-sucedidos da EC2 A para IP private EC2 B                            | ![Ping](evidencias/ping.png)|
+| Ping bem-sucedidos da EC2 B para IP private EC2 A                            | ![Ping](evidencias/ping2.png)|
 | AWS Certificate Manager (ACM)   | ![ACM](evidencias/cm.png)          |
 | Launch Template                 | ![LT](evidencias/Launch1.png)      |
 | Target Group                    | ![TG](evidencias/tg1.png)          |
