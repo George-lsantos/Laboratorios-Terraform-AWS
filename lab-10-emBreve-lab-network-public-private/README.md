@@ -61,6 +61,22 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em diferentes 
 - Tela de aceitação do VPC Peering
 - SSH e ping bem-sucedidos
 
+  ## 📷 Evidências
+
+| Componente                      | Screenshot                         |
+|---------------------------------|-------------------------------------|
+| ping bem-sucedidos da EC2 A para EC2 B                            | ![Ping](evidencias/ping.png)|
+| AWS Certificate Manager (ACM)   | ![ACM](evidencias/cm.png)          |
+| Launch Template                 | ![LT](evidencias/Launch1.png)      |
+| Target Group                    | ![TG](evidencias/tg1.png)          |
+| ALB com Listeners and rules           | ![listeners](evidencias/listeners.png)         |
+| Validação o https://www.tecnologiaaws.site/     | ![https](evidencias/https.png)|
+| Validação do Balanceamento     | ![Validação](evidencias/teste2.png)|
+| Validação do Balanceamento - Activity history     | ![Validação](evidencias/teste3.png)|
+| Notificações (SNS)             | ![SNS](evidencias/ntf.png)         |
+
+---
+
 ---
 
 ## 💡 Conhecimentos Demonstrados
