@@ -1,4 +1,4 @@
-# 🛰️ Desafio 2 – Comunicação entre VPCs com VPC Peering
+# Comunicação entre VPCs com VPC Peering
 
 Este laboratório demonstra como estabelecer comunicação privada entre duas VPCs distintas na AWS, utilizando **VPC Peering**, roteamento cruzado e regras de segurança apropriadas.
 
