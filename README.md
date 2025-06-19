@@ -29,8 +29,10 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 | 06  | Load Balancer (ALB) + Auto Scaling                        | Infra com escalabilidade automática                                       | [🔗 Acessar](./lab-04-ALB-ASG) |
 | 07  | ALB + Auto Scaling + Route 53 + ACM                       | Infra segura, escalável e com domínio público                             | [🔗 Acessar](./lab-04-ALB-ASG-Route53) |
 | 08  | Amazon RDS com VPC                                        | Banco relacional privado com controle de acesso                           | [🔗 Acessar](./lab-05-RDS) |
+| 09  | VPC Peering                                  | Comunicação entre VPCs com VPC Peering                       | [🔗 Acessar](./lab-06-network-vpc-peering) |
 
 
 
 ---
 ---
+lab-06-network-vpc-peering
