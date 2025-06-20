@@ -18,24 +18,21 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 
 ---
 ## 📁 Laboratórios Disponíveis
-
-## 📁 Laboratórios Disponíveis
-
-| Nº   | Laboratório                                                                              | Caminho                                                                                   |
-|------|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| 01   | Monitoramento de Custos com AWS Budgets e CloudWatch                                     | [lab-01-monitoramento](./lab-01-monitoramento)                                           |
-| 02   | S3 Cross-Account Replication                                                             | [lab-02-s3-cross-account-replication](./lab-02-s3-cross-account-replication)             |
-| 03   | Site Estático com S3 + CloudFront + Route 53 + ACM                                      | [lab-03-s3-static-website-Cloudfront-ACM](./lab-03-s3-static-website-Cloudfront-ACM)     |
-| 04   | Route 53 com Failover                                                                    | [lab-04-route53-failover](./lab-04-route53-failover)                                     |
-| 05   | Load Balancer (ALB) com Redirecionamento HTTPS                                          | [lab-05-ALB](./lab-05-ALB)                                                               |
-| 06   | Load Balancer (ALB) + Auto Scaling                                                       | [lab-06-ALB-ASG](./lab-06-ALB-ASG)                                                       |
-| 07   | ALB + Auto Scaling + Route 53 + ACM (Infra Segura e Escalável)                          | [lab-07-ALB-ASG-Route53](./lab-07-ALB-ASG-Route53)                                       |
-| 08   | Amazon RDS com VPC (Banco Relacional Privado)                                           | [lab-08-RDS](./lab-08-RDS)                                                               |
-| 09   | Comunicação entre VPCs com VPC Peering                                                  | [lab-09-network-vpc-peering](./lab-09-network-vpc-peering)                               |
-| 10   | Network Multi-VPC com Transit Gateway                                                   | [lab-10-network-multi-vpc-tgw](./lab-10-network-multi-vpc-tgw)                           |
-| 11   | Network Multi-VPC TGW Multi-Account Cross-Region                                        | [lab-11-network-multi-vpc-tgw-multi-account-cross-region](./lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
-| 12   | Network Multi-VPC TGW Cross-Region com Banco de Dados                                   | [lab-12-network-multi-vpc-tgw-cross-region-db](./lab-12-network-multi-vpc-tgw-cross-region-db) |
-| 13   | Migração com AWS ADS + MGN + Migration Hub                                              | [lab-13-migration-ads-mgn-migration-hub](./lab-13-migration-ads-mgn-migration-hub)       |
+| Nº | Projeto                                            | Descrição                                                               | Link 📎                                                                 |
+| -- | -------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 01 | Monitoramento de Custos                            | AWS Budgets + CloudWatch para alertas financeiros                       | [🔗 Acessar](./lab-01-monitoramento)                                    |
+| 02 | S3 Cross-Account Replication                       | Replicação de buckets S3 entre contas diferentes                        | [🔗 Acessar](./lab-02-s3-cross-account-replication)                     |
+| 03 | Site Estático com S3 + CloudFront + Route 53 + ACM | Hospedagem com CDN, domínio customizado e HTTPS                         | [🔗 Acessar](./lab-03-s3-static-website-Cloudfront-ACM)                 |
+| 04 | Route 53 com Failover                              | Alta disponibilidade com DNS Failover                                   | [🔗 Acessar](./lab-04-route53-failover)                                 |
+| 05 | Load Balancer (ALB)                                | ALB com redirecionamento HTTPS                                          | [🔗 Acessar](./lab-05-ALB)                                              |
+| 06 | Load Balancer (ALB) + Auto Scaling                 | Infra com escalabilidade automática                                     | [🔗 Acessar](./lab-06-ALB-ASG)                                          |
+| 07 | ALB + Auto Scaling + Route 53 + ACM                | Infra segura, escalável e com domínio público                           | [🔗 Acessar](./lab-07-ALB-ASG-Route53)                                  |
+| 08 | Amazon RDS com VPC                                 | Banco relacional privado com controle de acesso                         | [🔗 Acessar](./lab-08-RDS)                                              |
+| 09 | VPC Peering                                        | Comunicação entre VPCs com VPC Peering                                  | [🔗 Acessar](./lab-09-network-vpc-peering)                              |
+| 10 | Multi-VPC com Transit Gateway                      | Comunicação entre VPCs na mesma conta via AWS Transit Gateway           | [🔗 Acessar](./lab-10-network-multi-vpc-tgw)                            |
+| 11 | Multi-Account Cross-Region com Transit Gateway     | Comunicação entre VPCs em contas e regiões diferentes com TGW           | [🔗 Acessar](./lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
+| 12 | Multi-VPC Cross-Region com TGW + Database          | Comunicação entre VPCs em regiões diferentes, incluindo VPC de Database | [🔗 Acessar](./lab-12-network-multi-vpc-tgw-cross-region-db)            |
+| 13 | Migração com ADS + MGN + Migration Hub             | Descoberta, análise e migração de servidores on-premises para AWS       | [🔗 Acessar](./lab-13-migration-ads-mgn-migration-hub)                  |
 
 ---
 
