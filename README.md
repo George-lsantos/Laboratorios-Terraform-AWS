@@ -20,7 +20,7 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 ## 📁 Laboratórios Disponíveis
 | Nº | Projeto                                            | Descrição                                                               | Link 📎                                                                 |
 | -- | -------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| 01 | Monitoramento de Custos                            | AWS Budgets + CloudWatch para alertas financeiros                       | [🔗 Acessar](./lab-01-monitoramento)                                    |
+| 00 | Monitoramento de Custos                            | AWS Budgets + CloudWatch para alertas financeiros                       | [🔗 Acessar](./lab-00-monitoramento)                                    |
 | 02 | S3 Cross-Account Replication                       | Replicação de buckets S3 entre contas diferentes                        | [🔗 Acessar](./lab-02-s3-cross-account-replication)                     |
 | 03 | Site Estático com S3 + CloudFront + Route 53 + ACM | Hospedagem com CDN, domínio customizado e HTTPS                         | [🔗 Acessar](./lab-03-s3-static-website-Cloudfront-ACM)                 |
 | 04 | Route 53 com Failover                              | Alta disponibilidade com DNS Failover                                   | [🔗 Acessar](./lab-04-route53-failover)                                 |
