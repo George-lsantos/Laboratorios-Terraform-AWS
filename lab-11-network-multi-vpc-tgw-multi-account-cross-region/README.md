@@ -1,110 +1,131 @@
-# 🛰️ Comunicação entre VPCs com AWS Transit Gateway entre Regiões e Contas Diferentes
+# 🛰️ Comunicação entre VPCs usando VPC Peering Inter-Region e AWS Transit Gateway Multi-Account
 
-Este laboratório demonstra como estabelecer comunicação privada e escalável entre duas VPCs localizadas em **regiões diferentes e em contas AWS diferentes**, utilizando o **AWS Transit Gateway (TGW)** e **Transit Gateway Peering**. Essa abordagem é ideal para ambientes multi-região e multi-conta que precisam de interconexão centralizada, resiliente e segura.
+Este laboratório demonstra como estabelecer comunicação privada, escalável e segura entre três VPCs, sendo duas na mesma conta, porém em **regiões diferentes**, e uma em **outra conta na mesma região da primeira VPC**, utilizando uma combinação de **VPC Peering Inter-Region** e **AWS Transit Gateway (TGW)**.  
+
+Essa abordagem é ideal para ambientes multi-região e multi-conta que precisam de interconexão centralizada, resiliente e segura.
 
 ---
 
 ## 🎯 Objetivo
 
-Habilitar comunicação privada entre instâncias EC2 localizadas em VPCs diferentes, hospedadas em **regiões distintas e em contas AWS separadas**, utilizando Transit Gateway Peering. O laboratório segue boas práticas de segurança, escalabilidade e arquitetura de rede distribuída.
+Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs diferentes, distribuídas em duas regiões e duas contas AWS, utilizando:  
+- **VPC Peering** entre VPCs na mesma conta, porém em regiões diferentes.  
+- **Transit Gateway (TGW)** para interconexão entre contas e para roteamento centralizado.
 
 ---
 
 ## 🌐 Arquitetura
 
-![Diagrama da Arquitetura](evidencias/diagrama-tgw-peering.png)
+![Diagrama da Arquitetura](evidencias/diagrama-vpc-peering-tgw.png)
 
 ---
 
 ## 🛠️ Tarefas Realizadas
 
-### 🔸 Na Conta 1 (`Conta-Prod`) – Região `us-east-1` (N. Virginia)
+### 🔸 Na Conta A (`Conta-Network`) – Região `us-east-1` (N. Virginia)
 
 1. **Criar VPC:**
-   - `VPC-Prod` → CIDR: `10.10.0.0/16`
+   - `VPC-East` → CIDR: `10.0.0.0/16`
 
 2. **Criar Subnet:**
-   - Subnet pública `10.10.1.0/24` (AZ: `us-east-1a`)
+   - Subnet pública `10.0.1.0/24` (AZ: `us-east-1a`)
 
 3. **Criar Instância EC2:**
-   - `EC2-Prod` na VPC-Prod
+   - `EC2-East` na VPC-East
 
 4. **Criar Transit Gateway:**
-   - Nome: `TGW-NVIRGINIA`
+   - Nome: `TGW-East`
    - Habilitar DNS Support e Default Route Table Association/Propagation conforme necessidade
 
 5. **Criar Transit Gateway Attachment (VPC):**
-   - Anexar `VPC-Prod` ao TGW
+   - Anexar `VPC-East` ao TGW-East
 
 ---
 
-### 🔹 Na Conta 2 (`Conta-DB`) – Região `us-west-2` (Oregon)
+### 🔹 Na Conta A (`Conta-Network`) – Região `us-west-1` (Califórnia)
 
 1. **Criar VPC:**
-   - `VPC-Database` → CIDR: `10.20.0.0/16`
+   - `VPC-West` → CIDR: `10.1.0.0/16`
 
 2. **Criar Subnet:**
-   - Subnet pública `10.20.1.0/24` (AZ: `us-west-2a`)
+   - Subnet pública `10.1.1.0/24` (AZ: `us-west-1a`)
 
 3. **Criar Instância EC2:**
-   - `EC2-DB` na VPC-Database
+   - `EC2-West` na VPC-West
 
-4. **Criar Transit Gateway:**
-   - Nome: `TGW-OREGON`
-   - Habilitar DNS Support e Default Route Table Association/Propagation conforme necessidade
+4. **Criar VPC Peering:**
+   - Entre `VPC-East` (us-east-1) e `VPC-West` (us-west-1)
+   - Aceitar a solicitação de peering na região `us-west-1`
+
+5. **Configurar Rotas:**
+   - Na VPC-East, rota para `10.1.0.0/16` via Peering
+   - Na VPC-West, rota para `10.0.0.0/16` via Peering
+
+---
+
+### 🔸 Na Conta B (`Conta-App`) – Região `us-east-1` (N. Virginia)
+
+1. **Criar VPC:**
+   - `VPC-App` → CIDR: `192.168.0.0/16`
+
+2. **Criar Subnet:**
+   - Subnet pública `192.168.1.0/24` (AZ: `us-east-1a`)
+
+3. **Criar Instância EC2:**
+   - `EC2-App` na VPC-App
+
+4. **Compartilhar o Transit Gateway (`TGW-East`) da Conta-Network:**
+   - Usar o **Resource Access Manager (RAM)** para compartilhar o TGW com a Conta-App
 
 5. **Criar Transit Gateway Attachment (VPC):**
-   - Anexar `VPC-Database` ao TGW
+   - Anexar `VPC-App` ao `TGW-East`
 
 ---
 
-### 🔗 Estabelecendo Peering entre os Transit Gateways
+### 🔗 Configuração de Rotas
 
-1. Criar **Transit Gateway Peering Attachment**:
-   - TGW `TGW-NVIRGINIA` ↔ TGW `TGW-OREGON`
+1. **Route Table do TGW-East:**
+   - Rota para `192.168.0.0/16` → Attachment da VPC-App
+   - Rota para `10.0.0.0/16` → Attachment da VPC-East
 
-2. Aceitar a solicitação de peering na conta oposta.
+2. **Route Table da VPC-East (us-east-1):**
+   - Rota para `192.168.0.0/16` → Transit Gateway (TGW-East)
+   - Rota para `10.1.0.0/16` → VPC Peering (VPC-West)
 
-3. Após aceitação, o estado do peering deve ser `Available`.
+3. **Route Table da VPC-App (us-east-1):**
+   - Rota para `10.0.0.0/16` → Transit Gateway (TGW-East)
+   - Rota para `10.1.0.0/16` → Transit Gateway → VPC-East → Peering → VPC-West
 
----
-
-### 🗺️ Configuração de Rotas
-
-1. **Route Table do TGW-NVIRGINIA:**
-   - Rota para `10.20.0.0/16` → Peering Attachment (para TGW-OREGON)
-
-2. **Route Table do TGW-OREGON:**
-   - Rota para `10.10.0.0/16` → Peering Attachment (para TGW-NVIRGINIA)
-
-3. **Route Table da VPC-Prod:**
-   - Rota para `10.20.0.0/16` → Transit Gateway (TGW-NVIRGINIA)
-
-4. **Route Table da VPC-Database:**
-   - Rota para `10.10.0.0/16` → Transit Gateway (TGW-OREGON)
+4. **Route Table da VPC-West (us-west-1):**
+   - Rota para `10.0.0.0/16` → VPC Peering (VPC-East)
+   - Rota para `192.168.0.0/16` → VPC Peering → VPC-East → TGW → VPC-App
 
 ---
 
 ### 🔐 Configuração dos Security Groups
 
-- Liberar **ICMP (ping)** e/ou **SSH (porta 22)** entre as instâncias:
-  - De `10.10.0.0/16` para `10.20.0.0/16` e vice-versa.
+- Permitir **ICMP (ping)** e/ou **SSH (porta 22)**:
+  - Entre `10.0.0.0/16`, `10.1.0.0/16` e `192.168.0.0/16` mutuamente.
 
 ---
 
 ### 🔧 Testes de Conectividade
 
-- **SSH ou ping de `EC2-Prod` (N. Virginia) para `EC2-DB` (Oregon)** via IP privado.
-- Teste inverso de `EC2-DB` para `EC2-Prod`.
+- **Ping ou SSH de:**
+  - `EC2-East` ↔ `EC2-West` (via Peering Inter-Region)
+  - `EC2-East` ↔ `EC2-App` (via Transit Gateway)
+  - `EC2-West` ↔ `EC2-App` (via VPC-East como trânsito)
 
 ---
 
 ## ✅ Resultados Esperados
 
-- Comunicação bem-sucedida entre as instâncias via IP privado.
-- Tráfego roteado por meio dos Transit Gateways e do peering.
+- Comunicação bem-sucedida via IP privado entre todas as instâncias.
+- Tráfego roteado corretamente:
+  - Direto via Peering para VPCs na mesma conta (regiões diferentes).
+  - Via Transit Gateway para comunicação entre contas.
 - Nenhum tráfego exposto à internet.
-- Arquitetura altamente escalável e resiliente entre regiões e contas.
+- Arquitetura escalável, multi-conta e multi-região.
 
 ---
 
@@ -112,31 +133,20 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em VPCs difere
 
 | Componente                          | Screenshot                                      |
 |--------------------------------------|-------------------------------------------------|
-| `VPC-Prod` → CIDR: `10.10.0.0/16`    | ![VPCProd](evidencias/vpc-prod.png)             |
-| `VPC-Database` → CIDR: `10.20.0.0/16`| ![VPCDB](evidencias/vpc-db.png)                 |
-| Transit Gateway N. Virginia          | ![TGW1](evidencias/tgw-nvirginia.png)           |
-| Transit Gateway Oregon               | ![TGW2](evidencias/tgw-oregon.png)              |
-| TGW Peering Attachment               | ![Peering](evidencias/tgw-peering.png)          |
-| Route Table - VPC-Prod               | ![RTProd](evidencias/rt-prod.png)               |
-| Route Table - VPC-Database           | ![RTDB](evidencias/rt-db.png)                   |
-| Security Group - EC2-Prod            | ![SGProd](evidencias/sg-prod.png)               |
-| Security Group - EC2-DB              | ![SGDB](evidencias/sg-db.png)                   |
-| Ping EC2-Prod → EC2-DB               | ![PingA](evidencias/ping-prod-db.png)           |
-| Ping EC2-DB → EC2-Prod               | ![PingB](evidencias/ping-db-prod.png)           |
+| `VPC-East` → CIDR: `10.0.0.0/16`     | ![VPC-East](evidencias/vpc-east.png)            |
+| `VPC-West` → CIDR: `10.1.0.0/16`     | ![VPC-West](evidencias/vpc-west.png)            |
+| `VPC-App` → CIDR: `192.168.0.0/16`   | ![VPC-App](evidencias/vpc-app.png)              |
+| Transit Gateway (TGW-East)           | ![TGW](evidencias/tgw-east.png)                 |
+| VPC Peering (East ↔ West)            | ![Peering](evidencias/vpc-peering.png)          |
+| Route Table - VPC-East               | ![RT-East](evidencias/rt-east.png)              |
+| Route Table - VPC-West               | ![RT-West](evidencias/rt-west.png)              |
+| Route Table - VPC-App                | ![RT-App](evidencias/rt-app.png)                |
+| Security Group - EC2-East            | ![SG-East](evidencias/sg-east.png)              |
+| Security Group - EC2-West            | ![SG-West](evidencias/sg-west.png)              |
+| Security Group - EC2-App             | ![SG-App](evidencias/sg-app.png)                |
+| Ping EC2-East → EC2-App              | ![PingEA](evidencias/ping-east-app.png)         |
+| Ping EC2-West → EC2-App              | ![PingWA](evidencias/ping-west-app.png)         |
+| Ping EC2-East → EC2-West             | ![PingEW](evidencias/ping-east-west.png)        |
 
 ---
 
-## 📘 Recursos Recomendados
-
-- [AWS Transit Gateway Documentation](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html)
-- [AWS Transit Gateway Peering Guide](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html)
-- [Melhores práticas para arquitetura multi-região](https://docs.aws.amazon.com/whitepapers/latest/aws-multi-region-architecture/)
-
----
-
-## 🧠 Observações
-
-- Este laboratório pode ser expandido para incluir mais VPCs, conexões VPN, Direct Connect, e integração com serviços on-premises.
-- O uso de Transit Gateway Peering não suporta transferência de rotas para VPN ou Direct Connect — isso exigiria soluções adicionais, como Network Manager ou SD-WAN.
-
----
