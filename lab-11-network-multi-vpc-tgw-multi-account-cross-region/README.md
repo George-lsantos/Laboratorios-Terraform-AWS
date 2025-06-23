@@ -103,19 +103,19 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
 
 | Componente                          | Screenshot                                      |
 |--------------------------------------|-------------------------------------------------|
-| `VPC-East` → CIDR: `10.0.0.0/16`     | ![VPC-East](evidencias/vpc-east.png)            |
-| `VPC-West` → CIDR: `10.1.0.0/16`     | ![VPC-West](evidencias/vpc-west.png)            |
+| **Conta A:** `VPC-East` → CIDR: `10.0.0.0/16`     | ![VPC-East](evidencias/vpc-east.png)            |
+| **Conta A:** `VPC-West` → CIDR: `10.1.0.0/16`     | ![VPC-West](evidencias/vpc-west.png)            |
 | `VPC-App` → CIDR: `192.168.0.0/16`   | ![VPC-App](evidencias/vpc-app.png)              |
-| Transit Gateway (TGW-East)           | ![TGW](evidencias/tgw-east.png)                 |
-| VPC Peering (East ↔ West)            | ![Peering](evidencias/vpc-peering.png)          |
-| Route Table - VPC-East               | ![RT-East](evidencias/rt-east.png)              |
-| Route Table - VPC-West               | ![RT-West](evidencias/rt-west.png)              |
+| **Transit Gateway (TGW-East)**           | ![TGW](evidencias/tgw-east.png)                 |
+| **VPC Peering (East ↔ West)**            | ![Peering](evidencias/vpc-peering.png)          |
+| **Conta A:**  Route Table - VPC-East               | ![RT-East](evidencias/rt-east.png)              |
+| **Conta A:** Route Table - VPC-West               | ![RT-West](evidencias/rt-west.png)              |
 | Route Table - VPC-App                | ![RT-App](evidencias/rt-app.png)                |
-| Security Group - EC2-East            | ![SG-East](evidencias/sg-east.png)              |
-| Security Group - EC2-West            | ![SG-West](evidencias/sg-west.png)              |
+| **Conta A:** Security Group - EC2-East            | ![SG-East](evidencias/sg-east.png)              |
+| **Conta A:** Security Group - EC2-West            | ![SG-West](evidencias/sg-west.png)              |
 | Security Group - EC2-App             | ![SG-App](evidencias/sg-app.png)                |
-| Ping EC2-East → EC2-App              | ![PingEA](evidencias/ping-east-app.png)         |
-| Ping EC2-West → EC2-App              | ![PingWA](evidencias/ping-west-app.png)         |
+| **Conta A:** Ping EC2-East → EC2-West              | ![PingEA](evidencias/ping-east-app.png)         |
+| **Conta A:** Ping EC2-West → EC2-East              | ![PingWA](evidencias/ping-west-app.png)         |
 | Ping EC2-East → EC2-West             | ![PingEW](evidencias/ping-east-west.png)        |
 
 ---
