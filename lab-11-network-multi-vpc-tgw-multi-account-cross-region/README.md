@@ -22,7 +22,7 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
 
 ## 🛠️ Tarefas Realizadas
 
-### 🔸 Na Conta A (`Conta-Network`) – Região `us-east-1` (N. Virginia)
+### Na Conta A (`Conta-Network`) – Região `us-east-1` (N. Virginia)
 1. **VPC-1** (us-east-1)
    - CIDR: 10.0.0.0/16
    - Subnets: públicas/privadas (10.0.1.0/24, 10.0.2.0/24)
@@ -30,57 +30,19 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
    - CIDR: 10.1.0.0/16
    - Subnets: públicas/privadas (10.1.1.0/24, 10.1.2.0/24)
 
-
-
-1. **Criar VPC:**
-   - `VPC-East` → CIDR: `10.0.0.0/16`
-
-2. **Criar Subnet:**
-   - Subnet pública `10.0.1.0/24` (AZ: `us-east-1a`)
-
-3. **Criar Instância EC2:**
-   - `EC2-East` na VPC-East
-
-4. **Criar Transit Gateway:**
-   - Nome: `TGW-East`
-   - Habilitar DNS Support e Default Route Table Association/Propagation conforme necessidade
-
-5. **Criar Transit Gateway Attachment (VPC):**
-   - Anexar `VPC-East` ao TGW-East
-
----
-
-### 🔹 Na Conta A (`Conta-Network`) – Região `us-west-1` (Califórnia)
-
-1. **Criar VPC:**
-   - `VPC-West` → CIDR: `10.1.0.0/16`
-
-2. **Criar Subnet:**
-   - Subnet pública `10.1.1.0/24` (AZ: `us-west-1a`)
-
-3. **Criar Instância EC2:**
-   - `EC2-West` na VPC-West
-
-4. **Criar VPC Peering:**
+3. **Criar VPC Peering Inter-Region** (Conta A)
    - Entre `VPC-East` (us-east-1) e `VPC-West` (us-west-1)
    - Aceitar a solicitação de peering na região `us-west-1`
 
-5. **Configurar Rotas:**
+4. **Configurar Rotas:**
    - Na VPC-East, rota para `10.1.0.0/16` via Peering
    - Na VPC-West, rota para `10.0.0.0/16` via Peering
-
 ---
-
-### 🔸 Na Conta B (`Conta-App`) – Região `us-east-1` (N. Virginia)
-
-1. **Criar VPC:**
-   - `VPC-App` → CIDR: `192.168.0.0/16`
-
-2. **Criar Subnet:**
-   - Subnet pública `192.168.1.0/24` (AZ: `us-east-1a`)
-
-3. **Criar Instância EC2:**
-   - `EC2-App` na VPC-App
+### Na Conta B (`Conta-Network`) – Região `us-east-1` (N. Virginia)
+1.  **VPC-3** (us-east-1)
+   - CIDR: 192.168.0.0/16
+   - Subnets: públicas/privadas (192.168.1.0/24, 192.168.2.0/24)
+---
 
 4. **Compartilhar o Transit Gateway (`TGW-East`) da Conta-Network:**
    - Usar o **Resource Access Manager (RAM)** para compartilhar o TGW com a Conta-App
