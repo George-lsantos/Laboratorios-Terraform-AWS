@@ -27,8 +27,8 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
    - CIDR: 10.0.0.0/16
    - Subnets: públicas/privadas (10.0.1.0/24, 10.0.2.0/24)
 2. **VPC-2** (us-west-1)
- - CIDR: 10.1.0.0/16
- - Subnets: públicas/privadas (10.1.1.0/24, 10.1.2.0/24)
+   - CIDR: 10.1.0.0/16
+   - Subnets: públicas/privadas (10.1.1.0/24, 10.1.2.0/24)
 
 
 
