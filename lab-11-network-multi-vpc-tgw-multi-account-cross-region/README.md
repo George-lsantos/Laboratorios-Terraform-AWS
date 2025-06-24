@@ -124,8 +124,10 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
 | **Security Group - EC2-East**            | ![SG-East](evidencias/sg-east.png)              |
 | **Security Group - EC2-West**            | ![SG-West](evidencias/sg-west.png)              |
 | **Security Group - EC2-App**             | ![SG-App](evidencias/sg-app.png)                |
-| **Ping EC2-East → EC2-App**              | ![PingEA](evidencias/ping-east-app.png)         |
+|  Conta A **VPC-East** Ping EC2-East → Conta B **VPC-East** EC2-App              | ![PingEA](evidencias/ping-east-app.png)         |
 | **Ping EC2-West → EC2-App**              | ![PingWA](evidencias/ping-west-app.png)         |
 | **Ping EC2-East → EC2-West**             | ![PingEW](evidencias/ping-east-west.png)        |
+
+
 
 ---
