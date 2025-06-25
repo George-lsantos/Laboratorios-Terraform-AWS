@@ -1,4 +1,4 @@
-# 🛰️ Comunicação entre VPCs usando VPC Peering Inter-Region e AWS Transit Gateway Multi-Account
+# Comunicação entre VPCs usando VPC Peering Inter-Region e AWS Transit Gateway Multi-Account
 
 Este laboratório demonstra como estabelecer comunicação privada, escalável e segura entre três VPCs, sendo duas na mesma conta (em regiões diferentes) e uma em outra conta (na mesma região da primeira VPC), utilizando uma combinação de **VPC Peering Inter-Region** e **AWS Transit Gateway (TGW)** com **Resource Access Manager (RAM)**.
 
@@ -14,88 +14,44 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
 
 ---
 
-## 🌐 Arquitetura
+## Arquitetura
 
 ![Diagrama da Arquitetura](evidencias/diagrama-vpc-peering-tgw.png)
 
 ---
+## Tarefas Realizadas
 
-## 🛠️ Tarefas Realizadas
+### Conta A (Conta-Network) — `us-east-1` e `us-west-1`
+- Criadas duas VPCs: `Prod-vpc` (us-east-1) e `HMG-vpc` (us-west-1), com CIDRs distintos.
+- Estabelecido **VPC Peering Inter-Region** entre `Prod-vpc` (us-east-1) e `HMG-vpc` (us-west-1).
+- Configuradas rotas nas tabelas de ambas as VPCs para permitir comunicação via Peering.
 
-### Na Conta A (`Conta-Network`) – Região `us-east-1` (N. Virginia)
+### Conta B (Conta-App) — `us-east-1`
+- Criada a `BKP-vpc` com subnets públicas e privadas.
+- **Transit Gateway (TGW-East)** criado na Conta A e compartilhado com a Conta B via **AWS Resource Access Manager (RAM)**.
+- **Transit Gateway Attachment** adicionado à `BKP-vpc`.
 
-1. **VPC-1 (VPC-East)** — Região `us-east-1`
-   - CIDR: `10.0.0.0/16`
-   - Subnets: públicas/privadas (`10.0.1.0/24`, `10.0.2.0/24`)
+### Configuração de Rotas
+- **Route Table do TGW-East**: Configuração de rotas para a `VPC-App` e `VPC-East`.
+- **Route Tables nas VPCs**: Rotas configuradas para comunicação via Peering e TGW.
 
-2. **VPC-2 (VPC-West)** — Região `us-west-1`
-   - CIDR: `10.1.0.0/16`
-   - Subnets: públicas/privadas (`10.1.1.0/24`, `10.1.2.0/24`)
+### Security Groups
+- Configuração de **Security Groups** para permitir tráfego entre os CIDRs das VPCs.
+- Abertura de **ICMP** para testes de conectividade e **SSH (Porta 22)** opcional para acesso remoto.
 
-3. **Criar VPC Peering Inter-Region (Conta A)**
-   - Entre `VPC-East (us-east-1)` e `VPC-West (us-west-1)`
-   - Aceitar a solicitação de peering na região `us-west-1`
+### Testes Realizados
+- **Ping** e/ou **SSH** entre instâncias EC2 nas VPCs `Prod-vpc`, `HMG-vpc` e `BKP-vpc`, validando a conectividade via Peering e Transit Gateway.
 
-4. **Configurar Rotas do Peering**
-   - Na **VPC-East**, rota para `10.1.0.0/16` → **Peering**
-   - Na **VPC-West**, rota para `10.0.0.0/16` → **Peering**
+## Resultados Esperados
+- **Comunicação privada** bem-sucedida entre todas as instâncias EC2.
+- **Tráfego roteado corretamente**:
+  - Direto via Peering entre `VPC-East ↔ VPC-West`.
+  - Via TGW para comunicação entre `VPC-East ↔ VPC-App` e `VPC-West ↔ VPC-App`.
+- Nenhum tráfego passa pela **internet pública**.
+- Arquitetura **escalável**, **multi-conta** e **multi-região**.
 
----
-
-### Na Conta B (`Conta-App`) – Região `us-east-1`
-
-1. **VPC-3 (VPC-App)** — Região `us-east-1`
-   - CIDR: `192.168.0.0/16`
-   - Subnets: públicas/privadas (`192.168.1.0/24`, `192.168.2.0/24`)
-
-2. **Na Conta A — Criar Transit Gateway (`TGW-East`)**
-   - TGW centralizado na Conta-Network (`us-east-1`)
-
-3. **Compartilhar o TGW (`TGW-East`) com a Conta-App**
-   - Utilizar **AWS Resource Access Manager (RAM)** para compartilhar o TGW
-
-4. **Na Conta B — Criar Transit Gateway Attachment**
-   - Anexar a **VPC-App** ao **TGW-East** compartilhado
 
 ---
-
-## 🔗 Configuração de Rotas
-
-1. **Route Table do TGW-East**
-   - Rota para `192.168.0.0/16` → **Attachment da VPC-App**
-   - Rota para `10.0.0.0/16` → **Attachment da VPC-East**
-
-2. **Route Table da VPC-East (us-east-1)**
-   - Rota para `192.168.0.0/16` → **TGW-East**
-   - Rota para `10.1.0.0/16` → **VPC Peering (VPC-West)**
-
-3. **Route Table da VPC-App (us-east-1)**
-   - Rota para `10.0.0.0/16` → **TGW-East**
-   - Rota para `10.1.0.0/16` → **TGW-East → VPC-East → Peering → VPC-West**
-
-4. **Route Table da VPC-West (us-west-1)**
-   - Rota para `10.0.0.0/16` → **VPC Peering (VPC-East)**
-   - Rota para `192.168.0.0/16` → **Peering → VPC-East → TGW-East → VPC-App**
-
----
-
-## 🔐 Configuração dos Security Groups
-
-- Permitir tráfego entre os CIDRs:
-   - `10.0.0.0/16` ↔ `10.1.0.0/16` ↔ `192.168.0.0/16`
-- Abertura de:
-   - **ICMP (Ping)** para testes de conectividade
-   - **SSH (Porta 22)** opcional para acesso remoto
-
----
-
-## 🔧 Testes de Conectividade
-
-- **Ping ou SSH entre:**
-  - `EC2-East ↔ EC2-West` → via **VPC Peering**
-  - `EC2-East ↔ EC2-App` → via **Transit Gateway**
-  - `EC2-West ↔ EC2-App` → via **VPC-East + TGW**
-
 ---
 
 ## ✅ Resultados Esperados
@@ -113,20 +69,28 @@ Habilitar comunicação privada entre instâncias EC2 localizadas em três VPCs 
 
 | Componente                              | Screenshot                                      |
 |------------------------------------------|-------------------------------------------------|
-| **Conta A:** VPC-East → `10.0.0.0/16`    | ![VPC-East](evidencias/vpc-east.png)            |
-| **Conta A:** VPC-West → `10.1.0.0/16`    | ![VPC-West](evidencias/vpc-west.png)            |
-| **Conta B:** VPC-App → `192.168.0.0/16`  | ![VPC-App](evidencias/vpc-app.png)              |
-| **Transit Gateway (TGW-East)**           | ![TGW](evidencias/tgw-east.png)                 |
-| **VPC Peering (East ↔ West)**            | ![Peering](evidencias/vpc-peering.png)          |
-| **Route Table - VPC-East**               | ![RT-East](evidencias/rt-east.png)              |
-| **Route Table - VPC-West**               | ![RT-West](evidencias/rt-west.png)              |
-| **Route Table - VPC-App**                | ![RT-App](evidencias/rt-app.png)                |
+| **Conta A:** Prod-vpc → `10.0.0.0/16`    | ![VPC-East](evidencias/vpc-east.png)            |
+| **Conta A:** HMG-vpc → `10.1.0.0/16`    | ![VPC-West](evidencias/vpc-west.png)            |
+| **Conta B:** BKP-vpc → `192.168.0.0/16`  | ![VPC-App](evidencias/vpc-app.png)              |
+| **Resource Access Manager**           | ![TGW](evidencias/ram.png)    
+| **TGW policy tables HMG-vpc**           | ![TGW](evidencias/tgw-hmg.png)                 |
+| **TGW policy tables BKP-vpc**           | ![TGW](evidencias/tgw-bkp.png)    
+| **VPC Peering (Prod-vpc ↔ HMG-vpc)**            | ![Peering](evidencias/vpc-peering.png)          |
+| **Route Table - Prod-vpc**               | ![RT-East](evidencias/rt-east.png)              |
+| **Route Table - HMG-vpc**               | ![RT-West](evidencias/rt-west.png)              |
+| **Route Table - BKP-vpc**                | ![RT-App](evidencias/rt-app.png)                |
 | **Security Group - EC2-East**            | ![SG-East](evidencias/sg-east.png)              |
 | **Security Group - EC2-West**            | ![SG-West](evidencias/sg-west.png)              |
 | **Security Group - EC2-App**             | ![SG-App](evidencias/sg-app.png)                |
-|  Conta A **VPC-East** Ping EC2-East → Conta B **VPC-East** EC2-App              | ![PingEA](evidencias/ping-east-app.png)         |
-| **Ping EC2-West → EC2-App**              | ![PingWA](evidencias/ping-west-app.png)         |
-| **Ping EC2-East → EC2-West**             | ![PingEW](evidencias/ping-east-west.png)        |
+|  Conta A **Prod-vpc** Ping EC2-East → Conta B **BKP-vpc** EC2-App  | ![PingEA](evidencias/bkp.png)|
+| Conta A **Prod-vpc** Ping EC2-East → Conta A **HMG-vpc** EC2-West            | ![PingEW](evidencias/hmg.png)  | 
+|  Conta A **HMG-vpc** Ping EC2-East → Conta B **BKP-vpc** EC2-App  | ![PingEA](evidencias/abkp.png)|
+| Conta A **HMG-vpc** Ping EC2-East → Conta A **Prod-vpc** EC2-West            | ![PingEW](evidencias/pingwest.png)  | 
+| Conta B **BKP-vpc** Ping EC2-East → Conta A **HMG-vpc** EC2-West            | ![PingEW](evidencias/pibkp.png)  | 
+| Conta B **BKP-vpc** Ping EC2-East → Conta A **Prod-vpc** EC2-West            | ![PingEW](evidencias/plbkp.png)  | 
+
+
+
 
 
 
