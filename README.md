@@ -19,6 +19,7 @@ Bem-vindo ao meu portfólio de laboratórios com **Terraform na AWS**!
 
 | Nº  | Projeto                          | Descrição                                                                 | Link 📎                                                                 |
 | --- | -------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| 00  | 	Remote State S3   | 	Configuração de Remote State com bucket S3 e tabela DynamoDB | [🔗 Acessar](./lab-00-remote-state-S3)    
 | 01  | Módulos Terraform (EC2 + VPC)    | Criação de VPC, sub-redes, security groups e instâncias EC2 usando módulos | [🔗 Acessar](./lab-01-modules-EC2-VPC)                                  |
 
 ---
