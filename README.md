@@ -33,6 +33,7 @@ Este repositório contém laboratórios práticos com foco em serviços essencia
 | 11 | Multi-Account Cross-Region com Transit Gateway     | Comunicação entre VPCs em contas e regiões diferentes com TGW           | [🔗 Acessar](./lab-11-network-multi-vpc-tgw-multi-account-cross-region) |
 | 12 | Multi-VPC Cross-Region com TGW + Database          | Comunicação entre VPCs em regiões diferentes, incluindo VPC de Database | [🔗 Acessar](./lab-12-network-multi-vpc-tgw-cross-region-db)            |
 | 13 | Migração com ADS + MGN + Migration Hub             | Descoberta, análise e migração de servidores on-premises para AWS       | [🔗 Acessar](./lab-13-migration-ads-mgn-migration-hub)                  |
+| 14 | Módulos Terraform (EC2 + VPC)                      | Criação de VPC, sub-redes, security groups e EC2 usando módulos        | [🔗 Acessar](./lab-14-modules-EC2-VPC)                                  |
 
 ---
 
